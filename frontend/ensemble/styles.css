@@ -198,6 +198,7 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.15; }
 }
 .member { text-align: center; }
 .member-photo {
+  position: relative;
   width: clamp(140px, 22vw, 200px);
   height: clamp(140px, 22vw, 200px);
   border-radius: 50%;
@@ -216,11 +217,18 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.15; }
   overflow: hidden;
 }
 .member-photo img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
   display: block;
+  z-index: 1;
+}
+.member-photo .photo-initial {
+  position: relative;
+  z-index: 0;
 }
 .member-name {
   font-family: var(--font-display);
@@ -388,6 +396,7 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.15; }
   margin-bottom: 22px;
 }
 .bio-photo {
+  position: relative;
   width: 76px;
   height: 76px;
   border-radius: 50%;
@@ -403,11 +412,18 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.15; }
   flex: 0 0 76px;
 }
 .bio-photo img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
   display: block;
+  z-index: 1;
+}
+.bio-photo .photo-initial {
+  position: relative;
+  z-index: 0;
 }
 .bio-card h3 {
   font-family: var(--font-display);
