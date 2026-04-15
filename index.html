@@ -2,12 +2,249 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Latin Jazz Guitar Duo</title>
-  <meta http-equiv="refresh" content="0; url=./frontend/guitarduo/" />
-  <link rel="canonical" href="./frontend/guitarduo/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yuto Kanazawa — NYC Event Music</title>
+  <meta name="description" content="Yuto Kanazawa — live jazz for NYC lounges, hotels, and private events. Latin Jazz Guitar Duo, Jazz Guitar Trio, and Jazz Ensemble (Woodsiders Collective)." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg:        #0e0b08;
+      --bg-elev:   #171310;
+      --bg-card:   #1d1915;
+      --fg:        #f3ead9;
+      --muted:     #a8997c;
+      --border:    #2a241d;
+      --accent:    #c89b4a;
+      --accent-2:  #d94e3a;
+      --font-display: "Playfair Display", Georgia, serif;
+      --font-body:    "Inter", system-ui, sans-serif;
+      --radius: 14px;
+      --maxw: 1120px;
+      --pad: clamp(20px, 4vw, 48px);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-decoration: none; transition: color .2s ease; }
+    a:hover { color: var(--fg); }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px var(--pad);
+      border-bottom: 1px solid var(--border);
+    }
+    .brand {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--fg);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-mark { color: var(--accent-2); font-size: 1.2rem; }
+    .site-nav .right a {
+      color: var(--muted);
+      font-size: .92rem;
+    }
+    .site-nav .right a:hover { color: var(--fg); }
+
+    .hero {
+      padding: clamp(70px, 12vh, 160px) var(--pad) clamp(40px, 6vh, 80px);
+      text-align: center;
+      background:
+        radial-gradient(1200px 600px at 50% 0%, rgba(200, 155, 74, 0.18), transparent 60%),
+        radial-gradient(900px 500px at 50% 100%, rgba(217, 78, 58, 0.10), transparent 60%),
+        linear-gradient(180deg, #0b0906 0%, #0e0b08 100%);
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: .78rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin: 0 0 .8em;
+    }
+    h1 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin: 0 0 .4em;
+    }
+    .lede {
+      max-width: 640px;
+      margin: 0 auto 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+    }
+
+    .acts {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: clamp(40px, 7vw, 90px) var(--pad) clamp(60px, 9vw, 120px);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .act-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 32px 32px;
+      text-decoration: none;
+      color: var(--fg);
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+      min-height: 320px;
+      position: relative;
+      overflow: hidden;
+    }
+    .act-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(400px 200px at 100% 0%, rgba(200,155,74,.08), transparent 70%);
+      pointer-events: none;
+    }
+    .act-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+      background: #221c16;
+    }
+    .act-card .eyebrow { margin-bottom: 1em; }
+    .act-card h2 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(1.6rem, 2.4vw, 2rem);
+      line-height: 1.1;
+      margin: 0 0 .4em;
+      color: var(--fg);
+    }
+    .act-card p {
+      color: var(--muted);
+      margin: 0 0 20px;
+      flex: 1;
+    }
+    .act-card .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: .95rem;
+    }
+    .act-card .cta::after {
+      content: "→";
+      transition: transform .2s ease;
+    }
+    .act-card:hover .cta::after { transform: translateX(4px); }
+
+    .site-footer {
+      background: #090705;
+      padding: 40px var(--pad);
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    .site-footer p { margin: 4px 0; color: var(--muted); font-size: .9rem; }
+    .site-footer .brand-line {
+      font-family: var(--font-display);
+      color: var(--fg);
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+    .site-footer a { color: var(--muted); }
+    .site-footer a:hover { color: var(--accent); }
+
+    @media (max-width: 640px) {
+      .site-nav { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
 </head>
 <body>
-  <p>Redirecting to <a href="./frontend/guitarduo/">Latin Jazz Guitar Duo</a>…</p>
-  <script>location.replace("./frontend/guitarduo/");</script>
+  <header class="site-nav">
+    <a class="brand" href="./">
+      <span class="brand-mark">●</span>
+      Yuto Kanazawa
+    </a>
+    <div class="right">
+      <a href="https://booking.yutokanazawa.com">booking.yutokanazawa.com</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <p class="eyebrow">Live event music · NYC</p>
+    <h1>Jazz for every room</h1>
+    <p class="lede">
+      Three acts, one booking — from an intimate guitar &amp; cajon duo to
+      a full jazz ensemble. Hotels, lounges, weddings, and private events
+      across New York City.
+    </p>
+  </section>
+
+  <section class="acts" aria-label="Acts">
+    <a class="act-card" href="./frontend/guitarduo/">
+      <p class="eyebrow">Duo</p>
+      <h2>Latin Jazz<br />Guitar Duo</h2>
+      <p>
+        Guitar &amp; cajon. Cozy and upbeat — Latin Jazz, Flamenco, Bossa
+        Nova, Pops, R&amp;B. Perfect for lounges, dinners, and cocktail hours.
+      </p>
+      <span class="cta">See the duo</span>
+    </a>
+
+    <a class="act-card" href="./frontend/trio/">
+      <p class="eyebrow">Trio</p>
+      <h2>Jazz Guitar<br />Trio</h2>
+      <p>
+        Guitar, bass &amp; drums. Classic jazz standards, bossa nova, and
+        Latin jazz — polished and intimate for hotels and private events.
+      </p>
+      <span class="cta">See the trio</span>
+    </a>
+
+    <a class="act-card" href="./frontend/ensemble/">
+      <p class="eyebrow">Ensemble</p>
+      <h2>Jazz<br />Ensemble</h2>
+      <p>
+        Full band featuring the Woodsiders Collective. Horns, rhythm, and a
+        wide book from swing to modern jazz — for ballrooms and galas.
+      </p>
+      <span class="cta">See the ensemble</span>
+    </a>
+  </section>
+
+  <footer class="site-footer">
+    <p class="brand-line">Yuto Kanazawa · NYC Event Music</p>
+    <p>
+      <a href="./frontend/guitarduo/">Duo</a>
+      &nbsp;·&nbsp;
+      <a href="./frontend/trio/">Trio</a>
+      &nbsp;·&nbsp;
+      <a href="./frontend/ensemble/">Ensemble</a>
+    </p>
+    <p>© <span id="year"></span> Yuto Kanazawa · Part of yutokanazawa.com</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

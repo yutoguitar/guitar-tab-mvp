@@ -1,0 +1,5 @@
+# Drop hero image and duo photos here.
+# Expected files (referenced by TODO comments in index.html / styles.css):
+#   hero.jpg        — large hero background (≥1920px wide)
+#   duo-1.jpg       — about section photo
+#   duo-2.jpg       — optional second photo
