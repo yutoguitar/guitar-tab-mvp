@@ -227,8 +227,18 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.15; }
   z-index: 1;
 }
 .member-photo .photo-initial {
-  position: relative;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 0;
+  color: var(--accent);
+}
+.member-photo .photo-initial svg {
+  width: 50%;
+  height: 50%;
+  display: block;
 }
 .member-name {
   font-family: var(--font-display);
@@ -422,8 +432,18 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.15; }
   z-index: 1;
 }
 .bio-photo .photo-initial {
-  position: relative;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 0;
+  color: var(--accent);
+}
+.bio-photo .photo-initial svg {
+  width: 52%;
+  height: 52%;
+  display: block;
 }
 .bio-card h3 {
   font-family: var(--font-display);
