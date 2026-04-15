@@ -16,9 +16,9 @@ const INQUIRY_EMAIL = "TODO_EMAIL@example.com";
 //   "https://youtu.be/dQw4w9WgXcQ"
 //   "dQw4w9WgXcQ"
 const VIDEOS = [
-  "", // TODO: YouTube URL or ID for clip 1
-  "", // TODO: YouTube URL or ID for clip 2
-  "", // TODO: YouTube URL or ID for clip 3
+  "Jk_5c-DQXkA", // Yuto Kanazawa & Ilya — Dynov (live)
+  "",            // TODO: YouTube URL or ID for clip 2
+  "",            // TODO: YouTube URL or ID for clip 3
 ];
 // --------------------------------------------------------------------------
 
