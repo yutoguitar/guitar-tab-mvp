@@ -19,6 +19,7 @@ const VIDEOS = [
   "Jk_5c-DQXkA", // Yuto Kanazawa & Ilya — Dynov (live) #1
   "FFpwkdCGwHg", // Yuto Kanazawa & Ilya — Dynov (live) #2
   "m4nNw6y5jQw", // Yuto Kanazawa & Ilya — Dynov (live) #3
+  "B8FaWs4Nq5o", // Yuto Kanazawa & Ilya — Dynov (live) #4
 ];
 // --------------------------------------------------------------------------
 
