@@ -34,7 +34,6 @@ const FORMSPREE_ENDPOINT = "";
 document.addEventListener("DOMContentLoaded", () => {
   setFooterYear();
   enableSmoothNav();
-  renderVideos();
   wireInquiryForm();
 });
 

@@ -225,21 +225,32 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.15; }
 }
 .video-card {
   position: relative;
-  background: #000;
-  border: 1px solid var(--border);
+  background: #1a1410;
+  border: 1px solid rgba(200, 155, 74, 0.25);
   border-radius: var(--radius);
   overflow: hidden;
-  aspect-ratio: 16 / 9;
+  /* classic 16:9 padding trick — works on every browser, no 0-height bugs */
+  padding-bottom: 56.25%;
+  height: 0;
   box-shadow: 0 10px 40px rgba(0,0,0,.35);
 }
 .video-card iframe,
 .video-card .video-empty {
   position: absolute;
-  inset: 0;
+  top: 0; left: 0;
   width: 100%;
   height: 100%;
   border: 0;
 }
+
+.watch-note {
+  max-width: var(--maxw);
+  margin: 20px auto 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: .9rem;
+}
+.watch-note a { color: var(--accent); }
 .video-empty {
   display: flex;
   flex-direction: column;
