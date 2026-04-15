@@ -366,8 +366,74 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.15; }
 .video-empty span { font-size: .88rem; }
 
 /* ==========================================================================
-   About
+   About — member bio cards
    ========================================================================== */
+.bios-grid {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 24px;
+}
+.bio-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: clamp(24px, 3.5vw, 36px);
+}
+.bio-card header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+.bio-photo {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 35%, rgba(200,155,74,0.25), rgba(13,10,7,1) 70%);
+  border: 2px solid rgba(200, 155, 74, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--accent);
+  overflow: hidden;
+  flex: 0 0 76px;
+}
+.bio-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+.bio-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  margin: 0 0 4px;
+  color: var(--fg);
+}
+.bio-role {
+  margin: 0;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+}
+.bio-card p {
+  color: var(--fg);
+  margin: 0 0 1em;
+  line-height: 1.65;
+}
+.bio-card p + p { color: var(--muted); }
+.bio-card em {
+  color: var(--accent);
+  font-style: italic;
+}
+
+/* legacy 'about-grid' kept for any folder still using it */
 .about-grid {
   max-width: var(--maxw);
   margin: 0 auto;
@@ -376,20 +442,18 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.15; }
   gap: 48px;
   align-items: start;
 }
-.about-copy p {
-  font-size: 1.1rem;
-  color: var(--fg);
-  margin: 0 0 1em;
-}
+.about-copy p { font-size: 1.1rem; color: var(--fg); margin: 0 0 1em; }
 .about-copy p + p { color: var(--muted); }
 
 .style-chips {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 32px auto 0;
+  max-width: var(--maxw);
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  justify-content: center;
 }
 .style-chips li {
   padding: 8px 16px;
