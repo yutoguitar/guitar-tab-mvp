@@ -8,6 +8,20 @@
 // This is the only place the email address is hard-coded.
 const INQUIRY_EMAIL = "TODO_EMAIL@example.com";
 
+// ---- YouTube videos shown in the "Watch" section -------------------------
+// Paste full YouTube URLs or just the 11-character video IDs.
+// Empty strings render a styled "Add video" placeholder card.
+// Examples that work:
+//   "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+//   "https://youtu.be/dQw4w9WgXcQ"
+//   "dQw4w9WgXcQ"
+const VIDEOS = [
+  "", // TODO: YouTube URL or ID for clip 1
+  "", // TODO: YouTube URL or ID for clip 2
+  "", // TODO: YouTube URL or ID for clip 3
+];
+// --------------------------------------------------------------------------
+
 // ---- optional Formspree / backend endpoint -------------------------------
 // To switch from the mailto: fallback to a real POST endpoint, set
 // FORMSPREE_ENDPOINT to something like "https://formspree.io/f/xxxxxxx"
@@ -19,8 +33,69 @@ const FORMSPREE_ENDPOINT = "";
 document.addEventListener("DOMContentLoaded", () => {
   setFooterYear();
   enableSmoothNav();
+  renderVideos();
   wireInquiryForm();
 });
+
+function extractYouTubeId(input) {
+  if (!input) return "";
+  const s = String(input).trim();
+  if (!s) return "";
+  // Already an 11-char ID
+  if (/^[a-zA-Z0-9_-]{11}$/.test(s)) return s;
+  // Try to parse URL variants
+  try {
+    const u = new URL(s);
+    if (u.hostname.includes("youtu.be")) {
+      const id = u.pathname.replace(/^\//, "").split("/")[0];
+      return /^[a-zA-Z0-9_-]{11}$/.test(id) ? id : "";
+    }
+    if (u.hostname.includes("youtube.com")) {
+      const v = u.searchParams.get("v");
+      if (v && /^[a-zA-Z0-9_-]{11}$/.test(v)) return v;
+      // /embed/<id> or /shorts/<id>
+      const m = u.pathname.match(/\/(embed|shorts)\/([a-zA-Z0-9_-]{11})/);
+      if (m) return m[2];
+    }
+  } catch (_) { /* not a URL, fall through */ }
+  return "";
+}
+
+function renderVideos() {
+  const grid = document.getElementById("video-grid");
+  if (!grid) return;
+  grid.innerHTML = "";
+
+  const items = (typeof VIDEOS !== "undefined" && Array.isArray(VIDEOS) && VIDEOS.length)
+    ? VIDEOS
+    : ["", "", ""];
+
+  items.forEach((raw, i) => {
+    const card = document.createElement("div");
+    card.className = "video-card";
+    const id = extractYouTubeId(raw);
+    if (id) {
+      const iframe = document.createElement("iframe");
+      iframe.src = `https://www.youtube-nocookie.com/embed/${id}?rel=0`;
+      iframe.title = `Live performance video ${i + 1}`;
+      iframe.loading = "lazy";
+      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      iframe.referrerPolicy = "strict-origin-when-cross-origin";
+      iframe.allowFullscreen = true;
+      card.appendChild(iframe);
+    } else {
+      const empty = document.createElement("div");
+      empty.className = "video-empty";
+      empty.innerHTML = `
+        <div class="play" aria-hidden="true">▶</div>
+        <strong>Add YouTube video</strong>
+        <span>Edit <code>VIDEOS</code> in <code>main.js</code> and paste a URL.</span>
+      `;
+      card.appendChild(empty);
+    }
+    grid.appendChild(card);
+  });
+}
 
 function setFooterYear() {
   const el = document.getElementById("year");

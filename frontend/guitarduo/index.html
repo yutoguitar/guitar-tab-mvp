@@ -20,6 +20,7 @@
     </a>
     <nav aria-label="Section links">
       <ul>
+        <li><a href="#watch">Watch</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#repertoire">Repertoire</a></li>
         <li><a href="#venues">Venues</a></li>
@@ -44,6 +45,22 @@
           <a class="btn btn-ghost" href="#reviews">See reviews</a>
         </div>
       </div>
+    </section>
+
+    <!-- ========== WATCH (YouTube) ========== -->
+    <section id="watch" class="section alt" aria-labelledby="watch-title">
+      <div class="section-head">
+        <p class="eyebrow">Watch &amp; listen</p>
+        <h2 id="watch-title">Live performances</h2>
+        <p class="section-sub">
+          A few clips from recent shows. Full set list available on request.
+        </p>
+      </div>
+      <!--
+        Videos are configured in main.js — edit the VIDEOS array at the top
+        of main.js and paste in YouTube URLs or 11-character video IDs.
+      -->
+      <div id="video-grid" class="video-grid" aria-live="polite"></div>
     </section>
 
     <!-- ========== ABOUT ========== -->
