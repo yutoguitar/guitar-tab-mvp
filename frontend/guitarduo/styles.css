@@ -1,18 +1,18 @@
 /* ==========================================================================
-   Latin Jazz Guitar Duo — /guitarduo
-   Warm lounge theme. All tokens in :root so you can re-theme in one place
-   once the parent booking.yutokanazawa.com tokens are known.
+   Evergold Entertainment
+   Color theme matched to booking.yutokanazawa.com — cool dark palette
+   with bright gold accent.
    ========================================================================== */
 
 :root {
-  --bg:        #0e0b08;   /* deep warm black */
-  --bg-elev:   #171310;   /* section alt background */
-  --bg-card:   #1d1915;
-  --fg:        #f3ead9;   /* warm off-white */
-  --muted:     #a8997c;   /* warm muted tan */
-  --border:    #2a241d;
-  --accent:    #c89b4a;   /* warm amber/gold — "cozy lounge" */
-  --accent-2:  #d94e3a;   /* flamenco warm red — "upbeat" accent */
+  --bg:        #0a0a10;   /* cool near-black, slight navy tint */
+  --bg-elev:   #111118;   /* elevated sections */
+  --bg-card:   #18181f;   /* card backgrounds */
+  --fg:        #f5f5f5;   /* near-white */
+  --muted:     #8a8f9c;   /* cool gray */
+  --border:    #25252f;   /* cool dark borders */
+  --accent:    #d4a84b;   /* bright gold — matching booking.yutokanazawa.com */
+  --accent-2:  #e85d45;   /* warm red accent */
   --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
   --font-body:    "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   --radius: 14px;
@@ -77,7 +77,7 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.15; }
   justify-content: space-between;
   gap: 24px;
   padding: 16px var(--pad);
-  background: rgba(14, 11, 8, 0.85);
+  background: rgba(10, 10, 16, 0.88);
   backdrop-filter: saturate(140%) blur(10px);
   -webkit-backdrop-filter: saturate(140%) blur(10px);
   border-bottom: 1px solid var(--border);
@@ -92,7 +92,17 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.15; }
   align-items: center;
   gap: 10px;
 }
-.brand-mark { color: var(--accent-2); font-size: 1.2rem; }
+.brand-mark {
+  color: var(--bg);
+  background: var(--accent);
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 4px 6px;
+  border-radius: 4px;
+  line-height: 1;
+}
 
 .site-nav nav ul {
   display: flex;
@@ -137,9 +147,9 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.15; }
   align-items: center;
   padding: clamp(60px, 10vh, 140px) var(--pad);
   background:
-    radial-gradient(1200px 600px at 80% 20%, rgba(200, 155, 74, 0.18), transparent 60%),
-    radial-gradient(900px 500px at 10% 90%, rgba(217, 78, 58, 0.12), transparent 60%),
-    linear-gradient(180deg, #0b0906 0%, #0e0b08 60%, #13100c 100%);
+    radial-gradient(1200px 600px at 80% 20%, rgba(212, 168, 75, 0.14), transparent 60%),
+    radial-gradient(900px 500px at 10% 90%, rgba(232, 93, 69, 0.08), transparent 60%),
+    linear-gradient(180deg, #08080e 0%, #0a0a10 60%, #0e0e16 100%);
   overflow: hidden;
   /* TODO: drop a real hero image into assets/ and add:
      background-image: url("assets/hero.jpg"); background-size: cover;
@@ -151,9 +161,9 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.15; }
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(2px 2px at 20% 30%, rgba(200,155,74,.35) 50%, transparent 51%),
-    radial-gradient(1.5px 1.5px at 70% 60%, rgba(243,234,217,.25) 50%, transparent 51%),
-    radial-gradient(1.5px 1.5px at 40% 80%, rgba(200,155,74,.2) 50%, transparent 51%);
+    radial-gradient(2px 2px at 20% 30%, rgba(212,168,75,.3) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 70% 60%, rgba(245,245,245,.2) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 40% 80%, rgba(212,168,75,.15) 50%, transparent 51%);
   background-size: 300px 300px, 500px 500px, 400px 400px;
   opacity: .6;
   pointer-events: none;
@@ -203,8 +213,8 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.15; }
   height: clamp(140px, 22vw, 200px);
   border-radius: 50%;
   background:
-    radial-gradient(circle at 40% 35%, rgba(200,155,74,0.25), rgba(13,10,7,1) 70%);
-  border: 2px solid rgba(200, 155, 74, 0.55);
+    radial-gradient(circle at 40% 35%, rgba(212,168,75,0.2), rgba(10,10,16,1) 70%);
+  border: 2px solid rgba(212, 168, 75, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -213,7 +223,7 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.15; }
   color: var(--accent);
   margin: 0 auto 18px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.55),
-              0 0 0 6px rgba(200, 155, 74, 0.05);
+              0 0 0 6px rgba(212, 168, 75, 0.05);
   overflow: hidden;
 }
 .member-photo img {
@@ -270,7 +280,7 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.15; }
   border-radius: 999px;
   font-size: 0.86rem;
   color: var(--muted);
-  background: rgba(29, 25, 21, 0.6);
+  background: rgba(24, 24, 31, 0.6);
 }
 
 /* ==========================================================================
@@ -362,7 +372,7 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.15; }
   justify-content: center;
   gap: 12px;
   background:
-    radial-gradient(600px 200px at 50% 50%, rgba(200,155,74,.12), transparent 70%),
+    radial-gradient(600px 200px at 50% 50%, rgba(212,168,75,.1), transparent 70%),
     var(--bg-card);
   color: var(--muted);
   text-align: center;
@@ -410,8 +420,8 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.15; }
   width: 76px;
   height: 76px;
   border-radius: 50%;
-  background: radial-gradient(circle at 40% 35%, rgba(200,155,74,0.25), rgba(13,10,7,1) 70%);
-  border: 2px solid rgba(200, 155, 74, 0.55);
+  background: radial-gradient(circle at 40% 35%, rgba(212,168,75,0.2), rgba(10,10,16,1) 70%);
+  border: 2px solid rgba(212, 168, 75, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -638,7 +648,7 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.15; }
 .field textarea:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(200, 155, 74, 0.18);
+  box-shadow: 0 0 0 3px rgba(212, 168, 75, 0.14);
 }
 .field textarea { resize: vertical; min-height: 120px; }
 
@@ -661,7 +671,7 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.6rem); line-height: 1.15; }
    Footer
    ========================================================================== */
 .site-footer {
-  background: #090705;
+  background: #070710;
   padding: 40px var(--pad);
   border-top: 1px solid var(--border);
   margin-top: 40px;

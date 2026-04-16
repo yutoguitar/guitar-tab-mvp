@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Yuto Kanazawa — NYC Event Music</title>
-  <meta name="description" content="Yuto Kanazawa — live jazz for NYC lounges, hotels, and private events. Latin Jazz Guitar Duo, Jazz Guitar Trio, and Jazz Ensemble (Woodsiders Collective)." />
+  <title>Evergold Entertainment — NYC Live Jazz</title>
+  <meta name="description" content="Evergold Entertainment — live jazz for NYC lounges, hotels, and private events. Latin Jazz Guitar Duo, Jazz Guitar Trio, and Jazz Ensemble." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,14 +12,14 @@
 
   <style>
     :root {
-      --bg:        #0e0b08;
-      --bg-elev:   #171310;
-      --bg-card:   #1d1915;
-      --fg:        #f3ead9;
-      --muted:     #a8997c;
-      --border:    #2a241d;
-      --accent:    #c89b4a;
-      --accent-2:  #d94e3a;
+      --bg:        #0a0a10;
+      --bg-elev:   #111118;
+      --bg-card:   #18181f;
+      --fg:        #f5f5f5;
+      --muted:     #8a8f9c;
+      --border:    #25252f;
+      --accent:    #d4a84b;
+      --accent-2:  #e85d45;
       --font-display: "Playfair Display", Georgia, serif;
       --font-body:    "Inter", system-ui, sans-serif;
       --radius: 14px;
@@ -56,7 +56,17 @@
       align-items: center;
       gap: 10px;
     }
-    .brand-mark { color: var(--accent-2); font-size: 1.2rem; }
+    .brand-mark {
+      color: var(--bg);
+      background: var(--accent);
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 4px 6px;
+      border-radius: 4px;
+      line-height: 1;
+    }
     .site-nav .right a {
       color: var(--muted);
       font-size: .92rem;
@@ -67,9 +77,9 @@
       padding: clamp(70px, 12vh, 160px) var(--pad) clamp(40px, 6vh, 80px);
       text-align: center;
       background:
-        radial-gradient(1200px 600px at 50% 0%, rgba(200, 155, 74, 0.18), transparent 60%),
-        radial-gradient(900px 500px at 50% 100%, rgba(217, 78, 58, 0.10), transparent 60%),
-        linear-gradient(180deg, #0b0906 0%, #0e0b08 100%);
+        radial-gradient(1200px 600px at 50% 0%, rgba(212, 168, 75, 0.14), transparent 60%),
+        radial-gradient(900px 500px at 50% 100%, rgba(232, 93, 69, 0.06), transparent 60%),
+        linear-gradient(180deg, #08080e 0%, #0a0a10 100%);
     }
     .eyebrow {
       text-transform: uppercase;
@@ -121,13 +131,13 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(400px 200px at 100% 0%, rgba(200,155,74,.08), transparent 70%);
+      background: radial-gradient(400px 200px at 100% 0%, rgba(212,168,75,.06), transparent 70%);
       pointer-events: none;
     }
     .act-card:hover {
       transform: translateY(-3px);
       border-color: var(--accent);
-      background: #221c16;
+      background: #1e1e28;
     }
     .act-card .eyebrow { margin-bottom: 1em; }
     .act-card h2 {
@@ -158,7 +168,7 @@
     .act-card:hover .cta::after { transform: translateX(4px); }
 
     .site-footer {
-      background: #090705;
+      background: #070710;
       padding: 40px var(--pad);
       border-top: 1px solid var(--border);
       text-align: center;
@@ -181,8 +191,8 @@
 <body>
   <header class="site-nav">
     <a class="brand" href="./">
-      <span class="brand-mark">●</span>
-      Yuto Kanazawa
+      <span class="brand-mark">EE</span>
+      Evergold Entertainment
     </a>
     <div class="right">
       <a href="https://booking.yutokanazawa.com">booking.yutokanazawa.com</a>
@@ -190,7 +200,7 @@
   </header>
 
   <section class="hero">
-    <p class="eyebrow">Live event music · NYC</p>
+    <p class="eyebrow">Evergold Entertainment · NYC</p>
     <h1>Jazz for every room</h1>
     <p class="lede">
       Three acts, one booking — from an intimate guitar &amp; cajon duo to
@@ -232,7 +242,7 @@
   </section>
 
   <footer class="site-footer">
-    <p class="brand-line">Yuto Kanazawa · NYC Event Music</p>
+    <p class="brand-line">Evergold Entertainment · NYC</p>
     <p>
       <a href="./frontend/guitarduo/">Duo</a>
       &nbsp;·&nbsp;
@@ -240,7 +250,7 @@
       &nbsp;·&nbsp;
       <a href="./frontend/ensemble/">Ensemble</a>
     </p>
-    <p>© <span id="year"></span> Yuto Kanazawa · Part of yutokanazawa.com</p>
+    <p>© <span id="year"></span> Evergold Entertainment</p>
   </footer>
 
   <script>
